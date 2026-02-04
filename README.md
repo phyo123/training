@@ -7,6 +7,43 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Development with Docker
+
+This project includes Docker support for easy development setup.
+
+### Prerequisites
+
+- Docker
+- Docker Compose
+
+### Setup
+
+1. Clone the repository
+2. Copy the environment file:
+   ```bash
+   cp .env .env.docker
+   ```
+3. Update `.env.docker` if needed (database settings are configured for Docker)
+4. Build and start the containers:
+   ```bash
+   docker-compose up --build
+   ```
+5. Access the application at `http://localhost:8000`
+
+### Useful Commands
+
+- Start containers: `docker-compose up`
+- Stop containers: `docker-compose down`
+- Run artisan commands: `docker-compose exec app php artisan migrate`
+- Install npm dependencies: `docker-compose exec app npm install`
+- Build assets: `docker-compose exec app npm run build`
+
+### Services
+
+- **App**: Laravel application on port 8000
+- **DB**: MySQL database on port 3305
+- **Redis**: Redis cache/queue on port 6379
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

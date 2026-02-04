@@ -7,8 +7,12 @@
 /storage/pail
 /vendor
 .env
+.env.docker
+.env.example
 .env.backup
 .env.production
+Dockerfile
+docker-compose.yml
 .phpactor.json
 .phpunit.result.cache
 Homestead.json
